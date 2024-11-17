@@ -2,7 +2,7 @@ from rest_framework import serializers
 from django.contrib.auth.models import User
 from .models import Product
 from rest_framework_simplejwt.tokens import RefreshToken
-
+from django.conf import settings
 class UserSerializer(serializers.ModelSerializer):
     '''
         name: after get_ we can specify any variable name we want just need to use in field
@@ -51,6 +51,10 @@ class userSerializerWithToken(UserSerializer):
         return str(token.access_token)
 
 class ProductSerializer(serializers.ModelSerializer):
+    image = serializers.SerializerMethodField(read_only=True)
     class Meta:
         model = Product
         fields = '__all__'
+
+    def get_image(self, obj):
+        return f"{settings.BASE_URL}{obj.image.url}"
