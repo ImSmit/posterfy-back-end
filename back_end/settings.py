@@ -105,10 +105,10 @@ MIDDLEWARE = [
 
 # cors
 CORS_ALLOWED_ORIGINS = [
-    'http://192.168.0.167:3000',
-    'http://localhost:3000',
+    # 'http://192.168.0.167:3000',
+    # 'http://localhost:3000',
     'https://posterfy.netlify.app',
-    'http://posterfy.netlify.app',
+    'http://posterfy.netlify.app',  
 ]
 
 # CORS_ALLOW_ALL_ORIGINS = True
