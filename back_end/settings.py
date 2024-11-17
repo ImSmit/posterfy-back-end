@@ -110,7 +110,7 @@ MIDDLEWARE = [
 #     'https://67398c487f55417e95c608b2--posterfy.netlify.app',
 # ]
 
-# CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = True
 CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'back_end.urls'
